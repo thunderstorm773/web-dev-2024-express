@@ -29,6 +29,5 @@ db.models.University.hasMany(db.models.User, {
 });
 
 
-db.models.Subject.belongsToMany(db.models.User, {
-    through: 'UserSubjects'
-});
+db.models.Subject.belongsToMany(db.models.User, { through: 'SubjectUsers' });
+db.models.User.belongsToMany(db.models.Subject, { through: 'SubjectUsers' });
